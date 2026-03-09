@@ -5,7 +5,7 @@ import { Filter } from './components/Filter.jsx';
 import './styles/App.css'
 
 function App() {
-  const [filterType, setFilterType] = useState(null);
+  const [filterType, setFilterType] = useState([]);
   
   const [pokemons] = useState(initialPokemons);
 
@@ -16,7 +16,7 @@ function App() {
         <Filter pokemons={ pokemons } filterType={ filterType } setFilterType={ setFilterType } />
       </div>
       <div className="cards-grid">
-        <PokemonList pokemons={ filterType ? pokemons.filter((pokemon) => pokemon.type === filterType) : pokemons }/>
+        <PokemonList pokemons={ filterType.length>0 ? pokemons.filter((pokemon) => filterType.find((type) => type === pokemon.type)) : pokemons }/>
       </div>
     </div>
   )
