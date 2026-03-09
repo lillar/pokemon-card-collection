@@ -6,10 +6,6 @@
   font-family: system-ui, sans-serif;
 }
 
-.cards-grid {
-
-}
-
 .pokemon-list {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
@@ -21,4 +17,31 @@
   border-radius: 0.75rem;
   padding: 0.75rem 1rem;
   box-shadow: o 1px 3px rgba(0,0,0,0.08);
+}
+
+.filter-pill{
+  border: 1px solid #ddd;
+  border-radius: 0.75rem;
+  padding: 0.3rem 1rem;
+  box-shadow: o 1px 3px rgba(0,0,0,0.08);
+  cursor: pointer;
+}
+
+.filter-pill-active{
+  border: 1px solid #ddd;
+  border-radius: 0.75rem;
+  padding: 0.3rem 1rem;
+  box-shadow: o 1px 3px rgba(0,0,0,0.08);
+  cursor: pointer;
+  background-color: rgb(70, 111, 111);
+}
+
+.filter-pill:hover{
+  background-color: rgb(70, 111, 111);
+}
+
+.filter{
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
 }

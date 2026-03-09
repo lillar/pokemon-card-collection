@@ -1,18 +1,22 @@
 import { useState } from 'react'
 import { pokemons as initialPokemons } from './data/pokemon.js'
 import { PokemonList } from './components/PokemonList.jsx';
+import { Filter } from './components/Filter.jsx';
 import './styles/App.css'
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [filterType, setFilterType] = useState(null);
   
   const [pokemons] = useState(initialPokemons);
 
   return (
     <div className="app">
       <h1>Pokemon Card Collection</h1>
+      <div className="filter">
+        <Filter pokemons={ pokemons } filterType={ filterType } setFilterType={ setFilterType } />
+      </div>
       <div className="cards-grid">
-        <PokemonList pokemons={ pokemons }/>
+        <PokemonList pokemons={ filterType ? pokemons.filter((pokemon) => pokemon.type === filterType) : pokemons }/>
       </div>
     </div>
   )
